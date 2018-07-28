@@ -16,6 +16,7 @@
   "author": "LingWuYa",
   "license": "ISC",
   "dependencies": {
+    "hoek": "^4.2.1",
     "vue": "^2.5.13",
     "vue-style-loader": "^4.1.1"
   },
