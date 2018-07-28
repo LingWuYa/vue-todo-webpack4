@@ -4,17 +4,17 @@ import '../assets/styles/footer.styl'
 export default {
   data () {
     return {
-      author: 'itPoet',
-      blog: 'itPoet.cn'
+      author: 'LingWuYa',
+      blog: 'www.lingwuya.com'
     }
   },
   render () {
     return (
     // <div id={className.footer}>
       <div id="footer">
-        <span>Power by {this.author}，欢迎访问作者博客：{this.blog}</span>
+        <span>Power by {this.author}，欢迎访问我的博客：{this.blog}</span>
         <br/>
-        <span>Hosted by Coding Pages</span>
+        <span class="slogen">“吾生也有涯,而知也无涯。”</span>
       </div>
     )
   }

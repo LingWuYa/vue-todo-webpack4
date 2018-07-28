@@ -60,7 +60,7 @@ if (isDev) {
       devServer,
       plugins: defaultPlugins.concat([
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        // new webpack.NoEmitOnErrorsPlugin()
       ])
     })
 } else {
@@ -97,25 +97,27 @@ if (isDev) {
         new ExtractPlugin('styles.[contentHash:8].css'),
       ]),
       optimization: {
-        runtimeChunk: {
-            name: "manifest"                // webpack相关的代码单独打包?
-        },
+        // runtimeChunk: {
+        //     name: "manifest"                // webpack相关的代码单独打包?
+        // },
+        runtimeChunk: true,
         splitChunks: {
-            cacheGroups: {                  // 这里开始设置缓存的 chunks
-                commons: {
-                    chunks: 'initial',      // 必须三选一： "initial" | "all" | "async"(默认就是异步)
-                    minSize: 0,             // 最小尺寸，默认0,
-                    minChunks: 2,           // 最小 chunk ，默认1
-                    maxInitialRequests: 5   // 最大初始化请求书，默认1
-                },
-                vendor: {
-                    test: /node_modules/,   // 正则规则验证，如果符合就提取 chunk
-                    chunks: 'initial',      // 必须三选一： "initial" | "all" | "async"(默认就是异步)
-                    name: 'vendor',         // 要缓存的 分隔出来的 chunk 名称
-                    priority: 10,           // 缓存组优先级
-                    enforce: true
-                }
-            }
+            chunks: 'all'
+            // cacheGroups: {                  // 这里开始设置缓存的 chunks
+            //     commons: {
+            //         chunks: 'initial',      // 必须三选一： "initial" | "all" | "async"(默认就是异步)
+            //         minSize: 0,             // 最小尺寸，默认0,
+            //         minChunks: 2,           // 最小 chunk ，默认1
+            //         maxInitialRequests: 5   // 最大初始化请求书，默认1
+            //     },
+            //     vendor: {
+            //         test: /node_modules/,   // 正则规则验证，如果符合就提取 chunk
+            //         chunks: 'initial',      // 必须三选一： "initial" | "all" | "async"(默认就是异步)
+            //         name: 'vendor',         // 要缓存的 分隔出来的 chunk 名称
+            //         priority: 10,           // 缓存组优先级
+            //         enforce: true
+            //     }
+            // }
         },
         runtimeChunk: true
       }

@@ -3,6 +3,7 @@ const createVueLoaderOptions = require('./vue-loader.config');
 const isDev = process.env.NODE_ENV === 'development';
 
 const config = {
+    mode: process.env.NODE_ENV || 'production',  // development|production
     target: 'web',
     entry: path.join(__dirname, '../client/index.js'),   // 输入：项目主文件（入口文件）
     output: {       // 输出
