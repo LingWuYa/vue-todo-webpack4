@@ -1,2 +1,4 @@
 .idea
 node_modules
+practice
+build/webpack.config.practice.jss

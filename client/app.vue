@@ -3,7 +3,11 @@
     <div id="app">
         <div id="cover"></div>
         <appHeader></appHeader>
-        <appTodo></appTodo>
+        <router-link to="/app">app</router-link>
+        <router-link to="/login">login</router-link>
+        <!-- <router-link to="/login/exact">login/exact</router-link> -->
+        <router-view></router-view>
+        <!-- <appTodo></appTodo> -->
         <appFooter></appFooter>
     </div>
 </template>

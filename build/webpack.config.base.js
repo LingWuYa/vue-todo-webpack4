@@ -9,6 +9,7 @@ const config = {
     output: {       // 输出
         filename: 'build.[hash:8].js',  // 输出的文件名
         path: path.join(__dirname, '../dist')  // 输出路径
+        // publicPath: 'dist'
     },
     module: {       // 配置加载资源
         rules: [    // 规则

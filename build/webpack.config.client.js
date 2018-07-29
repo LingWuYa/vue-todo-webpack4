@@ -13,7 +13,9 @@ const defaultPlugins = [
           NODE_ENV: isDev ? '"development"' : '"production"'
       }
   }),
-  new HTMLPlugin()
+  new HTMLPlugin({
+    template: path.join(__dirname, 'template.html')
+  })
 ];
 
 const devServer = {
@@ -22,6 +24,10 @@ const devServer = {
   overlay: {  // webpack编译出现错误，则显示到网页上
       errors: true,
   },
+  historyApiFallback: true,
+  // historyApiFallback: {
+  //   index: 'dist/index.html'  // 路径前缀和webpack.config.base中的publicPath是要对应
+  // },
   // open: true, // run dev时是否自动打开浏览器
 
   // 不刷新热加载数据
